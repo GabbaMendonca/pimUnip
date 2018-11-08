@@ -5,12 +5,14 @@
 
 /*Funcao TelaInicial*/
 void menuInicial()  {
-  printf("|---------------------------------------|\n");
-  printf("|               TELA INICIAL            |\n");
-  printf("|---------------------------------------|\n");
+  printf("\n\n");
+  printf("|------------------------------------------------------|\n");
+  printf("|                      TELA INICIAL                    |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("\n");
 
   printf("OPCOES: \n");
-  printf("Digite 1: Para entrar na tela de usu�rio \n");
+  printf("Digite 1: Para entrar na tela de usuario \n");
   printf("Digite 2: Para entrar na tela de administrador \n");
 }
 
@@ -49,7 +51,7 @@ void escolha(){
 /*Main de teste*/
 void main () {
 
-    telaInicial();
+    menuInicial();
     escolha();
 
 }
