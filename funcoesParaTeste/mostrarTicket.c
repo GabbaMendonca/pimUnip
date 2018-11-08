@@ -1,4 +1,3 @@
-
 void mostrarPessoa(void){
 
     printf("%s",pE[SIZE].nome);
