@@ -1,13 +1,27 @@
+/**
+* @file cadastraPessoa.c
+* @brief Coleta os dados da palestra
+* @autor(es): Gabriel S. Mendonça, Gabriel A. Maranhão,
+*             Rodrigo J. da Almeida, Giovane Oliveira,
+*             Lucas Apolonio.
+*
+* @warning --
+* @todo - Lista do que implementar
+*
+* @bug  - Lista de bug conhecidos
+*       - Ano esta armazenando numeros com mais de 4 digitos - ex: ano : 20180
+* @Copyright (c) Autores do Projeto. Todos os Direitos reservados.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+#include "_Terminal.h"
 
 #define MIN 3
 #define MED 50
 #define MAX 100
-
-
 
 /* inicializando estruturas de variaveis
 STRUCTS
@@ -41,8 +55,8 @@ typedef struct data
     void alteraData();
     void alteraAssunto();
     void alteraSinopse();
-    void alteraDados();
-    void exibir();
+    void alteraDadosPalestra();
+    void exibirPalestra();
 
 /* FIM DOS PROTOTIPOS DAS FUNÇÕES */
 
@@ -77,7 +91,7 @@ void cadastrarPalestra()
     alteraData(&data);
     alteraAssunto(&palestra);
     alteraSinopse(&palestra);
-    exibir(&palestra,&data);
+    exibirPalestra(&palestra,&data);
 
 }
 
@@ -89,7 +103,7 @@ void cadastrarPalestra()
 
 void alteraPalestra(PALESTRA *pale)
 {    
-    system("clear");
+    LIMPA_TERM
     printf("\nNome da Palestra : ");
     fgets(pale->nome_da_palestra,MED,stdin);
 }
@@ -107,7 +121,7 @@ void alteraLocal(PALESTRA *pale)
 
 void alteraData(DATA *dat)
 {    
-    system("clear");
+    LIMPA_TERM
 
         printf("Data \n\n");
 
@@ -125,7 +139,7 @@ void alteraData(DATA *dat)
                     printf("Data invalida ! \n");
                     printf("Pressione ENTER para digitar novamente ... ");
                     getchar();
-                    system("clear");
+                    LIMPA_TERM
                 }
         }
         while(1);
@@ -144,7 +158,7 @@ void alteraData(DATA *dat)
                     printf("Data invalida ! \n");
                     printf("Pressione ENTER para digitar novamente ... ");
                     getchar();
-                    system("clear");
+                    LIMPA_TERM
                 }
         }
         while(1);
@@ -159,7 +173,7 @@ void alteraData(DATA *dat)
                     printf("Data invalida ! \n");
                     printf("Pressione ENTER para digitar novamente ... ");
                     getchar();
-                    system("clear");
+                    LIMPA_TERM
                 }
                 else
                 {
@@ -184,7 +198,7 @@ void alteraData(DATA *dat)
                     printf("Hora invalida ! \n");
                     printf("Pressione ENTER para digitar novamente ... ");
                     getchar();
-                    system("clear");
+                    LIMPA_TERM
                 }
         }
         while(1);
@@ -203,7 +217,7 @@ void alteraData(DATA *dat)
                     printf("Hora invalida ! \n");
                     printf("Pressione ENTER para digitar novamente ... ");
                     getchar();
-                    system("clear");
+                    LIMPA_TERM
                 }
         }
         while(1);
@@ -233,14 +247,14 @@ void alteraSinopse(PALESTRA *pale)
 
 /* Esta função serve para mostrar na tela os dados a grava-los */
 
-void exibir(PALESTRA *pale, DATA *dat)
+void exibirPalestra(PALESTRA *pale, DATA *dat)
 {
     int aux;
     aux = 0;
 
     do
     {
-        system("clear");
+        LIMPA_TERM
         printf("Nome da Paletra ... : %s", pale->nome_da_palestra);
         printf("Local ............. : %s", pale->local);
         printf("Data .............. : %d / %d / %d - %d : %d\n", dat->dia, dat->mes, dat->ano, dat->hora, dat->min);
@@ -274,10 +288,10 @@ void exibir(PALESTRA *pale, DATA *dat)
             break;
 
             case 'n':
-                alteraDados(pale,dat);
+                alteraDadosPalestra(pale,dat);
             break;
             case 'N':
-                alteraDados(pale,dat);
+                alteraDadosPalestra(pale,dat);
             break;
             
             default:
@@ -294,10 +308,10 @@ void exibir(PALESTRA *pale, DATA *dat)
 
 /* Apresenta o menu para a alteração dos dados inseridos */
 
-void alteraDados(PALESTRA *pale, DATA *dat)
+void alteraDadosPalestra(PALESTRA *pale, DATA *dat)
 { 
 
-    system("clear");
+    LIMPA_TERM
     //fflush(stdin);
     printf("( 1 ) >>> Nome da Paletra ... : %s", pale->nome_da_palestra);
     printf("( 2 ) >>> Local ............. : %s", pale->local);

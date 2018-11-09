@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 #include "a_cabecalho_para_teste.h"
-
+#include "_Terminal.h"
 
 void main()
 {
 
 
-        printf("1 - Testar Tela Inicial\n");
-        printf("2 - Testar Tela de Login\n\n");
+        printf("1 - Testar Cadastrar Palestra\n");
+        printf("2 - Testar Cadastrar Pessoa\n\n");
 
         int opc;
         scanf("%d%*c", &opc);
@@ -21,7 +21,7 @@ void main()
             break;
                 
             case 2:
-                //telaLogin();
+                cadastrarPessoa();
             default:
             break;
         }
