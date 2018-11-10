@@ -88,5 +88,4 @@ int validaLogin(char *strLogin, char *strSenha)
         printf("USUARIO NAO EXISTE! \n");
         return 0;
     }
-
 }

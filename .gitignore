@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#ignora arquivo de testes gerado na compilação
+Testes

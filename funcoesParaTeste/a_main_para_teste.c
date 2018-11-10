@@ -7,7 +7,6 @@
 void main()
 {
 
-
     printf("1 - Testar Cadastrar Palestra\n");
     printf("2 - Testar Cadastrar Pessoa\n");
     printf("3 - Testar Login ADM\n");
@@ -15,22 +14,21 @@ void main()
     int opc;
     scanf("%d%*c", &opc);
 
-    switch(opc)
+    switch (opc)
     {
-        case 1:
-            cadastrarPalestra();
-        break;
-            
-        case 2:
-            cadastrarPessoa();
+    case 1:
+        cadastrarPalestra();
         break;
 
-        case 3:
-            loginAdm();
+    case 2:
+        cadastrarPessoa();
         break;
 
-        default:
+    case 3:
+        loginAdm();
+        break;
+
+    default:
         break;
     }
-
 }

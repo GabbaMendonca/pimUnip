@@ -6,7 +6,7 @@ void escolha(){
 
   do {
     scanf("%d", &opcao);
-    if(opcao == 1){ //Leva o usuário a tela inicial
+    if(opcao == 1){ //Leva o usuï¿½rio a tela inicial
       //Funcao ACESSO ADM
       printf("Entrando.. na funcao acessoADM");
       loginAdm();
@@ -16,7 +16,7 @@ void escolha(){
 
       printf("Entrando.. na funcao Usuario");
     } else {
-      printf("Valor inválido");
+      printf("Valor invalido");
     }
   } while(opcao > 2);
 }
