@@ -6,5 +6,6 @@
 */
 void cadastrarPalestra();
 
-
 void cadastrarPessoa();
+
+void loginAdm();
